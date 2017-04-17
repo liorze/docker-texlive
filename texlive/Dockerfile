@@ -12,6 +12,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-rec
 	texlive-generic-recommended \
 	texlive-science \
     texlive-xetex \
-	ghostscript
+	ghostscript \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /document
