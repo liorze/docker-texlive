@@ -11,6 +11,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-rec
 	texlive-latex-extra \
 	texlive-lang-arabic \
 	texlive-generic-recommended \
+	texlive-publishers \
 	texlive-science \
     texlive-xetex \
 	ghostscript \
