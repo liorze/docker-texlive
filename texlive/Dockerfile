@@ -2,7 +2,7 @@ FROM debian:jessie
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
 	biber \
-    lmodern \
+	lmodern \
 	texlive-bibtex-extra \
 	texlive-latex-recommended \
 	texlive-font-utils \
@@ -16,6 +16,9 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-rec
 	texlive-lang-other \
 	texlive-xetex \
 	ghostscript \
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+  && curl https://downloads.sourceforge.net/project/ivritex/culmus-latex/culmus-latex-0.7/culmus-latex_0.7-1_all_fixed.deb \
+  && dpkg -i culmus-latex_0.7-1_all_fixed.deb \
+  && rm culmus-latex_0.7-1_all_fixed.deb
 
 WORKDIR /document
